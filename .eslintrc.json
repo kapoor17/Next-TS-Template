@@ -2,14 +2,14 @@
   "root": true,
   "extends": [
     "next/core-web-vitals",
-    "prettier",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
     "airbnb",
     "airbnb-typescript",
     "airbnb/hooks",
-    "plugin:react-hooks/recommended"
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "env": {
     "browser": true
@@ -38,6 +38,7 @@
         "unnamedComponents": "function-expression"
       }
     ],
+    "react/jsx-props-no-spreading": 0,
     "@typescript-eslint/comma-dangle": "off"
   },
   "settings": {
