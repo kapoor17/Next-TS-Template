@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+/**
+ * The store is wrapped around the whole app as of now, you
+ * can change the placement as and when needed, such that only children
+ * can interact with the store
+ */
+import StoreProvider from '@/providers/StoreProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,9 +20,11 @@ const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => (
-  <html lang="en">
-    <body className={inter.className}>{children}</body>
-  </html>
+  <StoreProvider>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  </StoreProvider>
 );
 
 export default RootLayout;
